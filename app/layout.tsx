@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon1.ico", type: "image/x-icon" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       {
@@ -57,6 +58,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-geist antialiased`}
       >
         {children}
+        <Toaster
+          position="top-center"
+          // richColors
+          // richColors
+          duration={3000}
+          theme="light"
+        />
       </body>
     </html>
   );

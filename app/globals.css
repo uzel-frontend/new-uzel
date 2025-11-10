@@ -659,6 +659,30 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .phoneInput {
+    --react-international-phone-border-radius: 10px;
+    --react-international-phone-border-color: #e1e4ea;
+    --react-international-phone-height: 40px;
+    --react-international-phone-width: 100%;
+
+    --react-international-phone-background-color: #fff;
+    --react-international-phone-text-color: #000;
+    --react-international-phone-selected-dropdown-item-background-color: #fff;
+    --react-international-phone-country-selector-background-color-hover: #fff;
+    --react-international-phone-country-selector-button: 50px;
+  }
+  .react-international-phone-flag-emoji {
+    @apply pl-2;
+  }
+  .react-international-phone-country-selector {
+    position: relative;
+    /* width: 100%; */
+  }
+  .react-international-phone-input-container {
+    display: flex;
+    /* width: 100%; */
+  }
 }
 
 @layer utilities {
