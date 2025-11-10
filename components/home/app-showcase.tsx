@@ -2,9 +2,7 @@ import Image from "next/image";
 import React from "react";
 import herocard from "@/public/home/herocard.png";
 
-type Props = {};
-
-const AppShowcase = (props: Props) => {
+const AppShowcase = () => {
   return (
     <div className="max-w-[1352px] mx-auto">
       <Image

@@ -5,9 +5,7 @@ import screen3 from "@/public/home/3.svg";
 import screen4 from "@/public/home/4.svg";
 import Image from "next/image";
 
-type Props = {};
-
-const FourScreenShowcase = (props: Props) => {
+const FourScreenShowcase = () => {
   return (
     <div className="px-4 py-16 sm:px-6 sm:py-20 md:py-24">
       <div className="group relative mx-auto flex h-[560px] max-w-[360px] overflow-hidden rounded-[28px] bg-[#335CFF] sm:h-[640px] sm:max-w-[600px] sm:rounded-[32px] md:h-[882px] md:max-w-[1352px] md:rounded-[40px]">
