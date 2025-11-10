@@ -25,7 +25,7 @@ const SimpleSteps = () => {
     {
       title: "Flexible Funding Options",
       description: `Easily fund your multi-currency wallets via
-direct bank transfers using your unique Uzel account number, or instantly withdebit/credit card payments. We integrate with local payment gateways for your convenience.`,
+direct bank transfers using your unique Uzel account number, or instantly with debit/credit card payments. We integrate with local payment gateways for your convenience.`,
       activeicon: thumbprintactive,
       inactiveicon: thumbprint,
       image: step2,
