@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import right from "@/public/home/right.svg";
 import AppShowcase from "./app-showcase";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -18,21 +19,23 @@ export const Hero = () => {
               Uzel the all-in-one fintech platform designed for your global
               lifestyle.
             </p>
-            <Button
-              variant="default"
-              style={{
-                border: "1px solid",
-                borderImageSource:
-                  "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)",
-                background:
-                  "linear-gradient(0deg, var(--primary-base, #335CFF), var(--primary-base, #335CFF)), linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-                boxShadow:
-                  "0px 0px 0px 1px var(--primary-base), 0px 1px 2px 0px #0E121B3D",
-              }}
-              className="mt-6 h-12 w-full max-w-[220px] md:mt-4 md:h-10 md:w-auto"
-            >
-              Join waitlist
-            </Button>
+            <Link href="/waitlist">
+              <Button
+                variant="default"
+                style={{
+                  border: "1px solid",
+                  borderImageSource:
+                    "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)",
+                  background:
+                    "linear-gradient(0deg, var(--primary-base, #335CFF), var(--primary-base, #335CFF)), linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+                  boxShadow:
+                    "0px 0px 0px 1px var(--primary-base), 0px 1px 2px 0px #0E121B3D",
+                }}
+                className="mt-6 h-12 w-full max-w-[220px] md:mt-4 md:h-10 md:w-auto"
+              >
+                Join waitlist
+              </Button>
+            </Link>
           </div>
         </div>
 

@@ -169,7 +169,7 @@ const WaitlistForm = () => {
                   </FormLabel>
                   <FormControl>
                     <PhoneInput
-                      defaultCountry="us"
+                      defaultCountry="ng"
                       {...field}
                       onChange={(phoneValue, data) => {
                         field.onChange(phoneValue);
