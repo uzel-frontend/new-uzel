@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Home", to: "#home" },
-  { label: "Blog", to: "#blog" },
+  // { label: "Blog", to: "#blog" },
   { label: "Product", to: "#product" },
   { label: "About", to: "#about" },
   { label: "Contact us", to: "#contact" },
@@ -52,12 +52,14 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button
-            variant="outline"
-            className="border border-stroke-soft-200 bg-transparent text-[#475467] hover:border-stroke-soft-200 hover:text-[#475467]"
-          >
-            Join waitlist
-          </Button>
+          <Link href="/waitlist">
+            <Button
+              variant="outline"
+              className="border border-stroke-soft-200 bg-transparent text-[#475467] hover:border-stroke-soft-200 hover:text-[#475467]"
+            >
+              Join waitlist
+            </Button>
+          </Link>
         </div>
 
         <Button
@@ -98,15 +100,11 @@ const Navbar = () => {
               ))}
             </nav>
             <div className="flex flex-col gap-2">
-              <Button
-                variant="outline"
-                className="border-neutral-200 bg-transparent text-neutral-700 hover:border-neutral-300 hover:text-neutral-900"
-              >
-                Sign in
-              </Button>
-              <Button className="btn-gradient-bg px-6 text-base font-semibold">
-                Join waitlist
-              </Button>
+              <Link href="/waitlist">
+                <Button className="btn-gradient-bg px-6 text-base font-semibold">
+                  Join waitlist
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

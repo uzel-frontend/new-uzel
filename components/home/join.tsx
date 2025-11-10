@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import trendline from "@/public/join/trend-line.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const Join = () => {
   return (
@@ -14,9 +15,11 @@ const Join = () => {
             Join thousands already managing their local and global finances the
             smart way with UZEL.
           </p>
-          <Button className="mt-4 h-12 rounded-[10px] px-8 text-sm bg-white text-[#525866] hover:bg-white border border-[#E1E4EA] font-semibold ">
-            Join waitlist
-          </Button>
+          <Link href="/waitlist">
+            <Button className="mt-4 h-12 rounded-[10px] px-8 text-sm bg-white text-[#525866] hover:bg-white border border-[#E1E4EA] font-semibold ">
+              Join waitlist
+            </Button>
+          </Link>
         </div>
 
         <div className=" absolute inset-0 z-0 h-full  w-full">
