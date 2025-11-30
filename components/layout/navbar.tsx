@@ -6,13 +6,18 @@ import logo from "@/public/logo.svg";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import ProductDropdown from "./product-dropdown";
 
-const NAV_LINKS = [
-  { label: "Home", to: "#home" },
+const NAV_LINKS: Array<{
+  label: string;
+  to: string;
+  hasDropdown?: boolean;
+}> = [
+  { label: "Home", to: "/" },
   // { label: "Blog", to: "#blog" },
-  { label: "Product", to: "#product" },
-  { label: "About", to: "#about" },
-  { label: "Contact us", to: "#contact" },
+  { label: "Product", to: "/product", hasDropdown: true },
+  { label: "About", to: "/about" },
+  { label: "Contact us", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -39,15 +44,19 @@ const Navbar = () => {
           </Link>
 
           <nav className="hidden items-center gap-2 text-sm font-medium text-[#475467] lg:flex">
-            {NAV_LINKS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.to}
-                className="rounded-xl px-4 py-2 transition-colors hover:text-neutral-900"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((item) =>
+              item.hasDropdown ? (
+                <ProductDropdown key={item.label} isMobile={false} />
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.to}
+                  className="rounded-xl px-4 py-2 transition-colors hover:text-neutral-900"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
         </div>
 
@@ -88,16 +97,24 @@ const Navbar = () => {
         >
           <div className="space-y-4 border-t border-neutral-100 bg-neutral-0 px-4 pb-6 pt-4 shadow-[0_12px_32px_-16px_rgba(15,23,42,0.35)]">
             <nav className="flex flex-col gap-2 text-base font-medium text-neutral-700">
-              {NAV_LINKS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.to}
-                  className="rounded-xl px-3 py-2 transition-colors hover:bg-neutral-100/80"
-                  onClick={closeMobileMenu}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((item) =>
+                item.hasDropdown ? (
+                  <ProductDropdown
+                    key={item.label}
+                    isMobile={true}
+                    onCloseMobileMenu={closeMobileMenu}
+                  />
+                ) : (
+                  <Link
+                    key={item.label}
+                    href={item.to}
+                    className="rounded-xl px-3 py-2 transition-colors hover:bg-neutral-100/80"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </nav>
             <div className="flex flex-col gap-2">
               <Link href="/waitlist">
